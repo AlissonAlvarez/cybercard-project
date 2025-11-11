@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cyber Card</title>
+    <link rel="icon" href="./images/logo-loader.png" type="logo-cyber-card">
+    <link rel="stylesheet" href="./style/estilos.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="position-absolute top-0 start-0 m-2">
+        <div
+          class="d-flex align-items-center justify-content-center rounded carta-roja shadow p-2"
+          style="width: 45px; height: 45px; cursor: pointer"
+          data-modal="modalSalir"
+        >
+          <i class="bi bi-box-arrow-left text-white fs-4"></i>
+        </div>
+      </div>
+
+      <div id="rating-component"></div>
+    </header>
+
+    <div class="contenedor-cartas container-fluid">
+      <!-- Cartas Rojas -->
+      <div class="d-flex justify-content-center gap-3 mt-4" id="tablero-cartas"
+      >
+        <!-- Contenedor de las cartas dinámicas -->
+        <div id="memory-board" class="d-flex flex-wrap justify-content-center gap-3">
+          <!-- Aquí se cargarán las cards dinámicamente -->
+        </div>
+
+        <div id="cartaNegraContainer" class="d-flex justify-content-center">
+          <div
+            class="card bg-dark text-white text-center carta carta-negra"
+            style="width: 127px; height: 186px; cursor: pointer"
+          >
+            <div class="card-inner">
+              <div
+                class="card-front d-flex justify-content-center align-items-center h-100"
+              >
+                <img
+                  src="svg/logo-cybercard-white.svg"
+                  alt="Card Image"
+                  class="img-fluid"
+                />
+              </div>
+              <div
+                class="card-back d-flex flex-column justify-content-center align-items-center h-100 p-2 text-white"
+                style="font-size: 0.9rem"
+              >
+                <p class="mb-0 fw-bold text-warning text-center">
+                  🛡️ Activaste escudo digital<br />
+                  <span class="text-light">Ganaste una recompensa</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Carta negra (comodín) -->
+      </div>
+
+      <div class="d-flex justify-content-center gap-3 mt-4" id="tablero-cartas-verde">
+        <div class="d-flex flex-wrap justify-content-center gap-3" id="memory-board-green">
+            <!-- Tus cartas verdes ya existentes -->
+        </div>
+
+            <!-- Carta negra verde -->
+            <div id="cartaNegraVerdeContainer" class="d-flex justify-content-center">
+                <div
+                class="card bg-dark text-white text-center carta carta-negra"
+                style="width: 127px; height: 186px; cursor: pointer"
+                >
+                <div class="card-inner">
+                    <div
+                    class="card-front d-flex justify-content-center align-items-center h-100"
+                    >
+                    <img
+                        src="svg/logo-cybercard-white.svg"
+                        alt="Card Image"
+                        class="img-fluid"
+                    />
+                    </div>
+                    <div
+                    class="card-back d-flex flex-column justify-content-center align-items-center h-100 p-2 text-white"
+                    style="font-size: 0.9rem"
+                    >
+                    <p class="mb-0 fw-bold text-danger text-center">
+                        ⚠️ Tu sistema fue infectado<br />
+                        <span class="text-light">Tienes un virus</span>
+                    </p>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+        <!-- 🔸 TABLERO CARTAS AMARILLAS -->
+        <div class="d-flex justify-content-center gap-3 mt-4" id="tablero-cartas-amarilla">
+            <!-- Contenedor de cartas amarillas -->
+            <div class="d-flex flex-wrap justify-content-center gap-3" id="memory-board-yellow">
+                <!-- Aquí se renderizan dinámicamente las cartas amarillas -->
+            </div>
+
+            <!-- Carta Negra Amarilla -->
+            <div id="cartaNegraAmarillaContainer" class="d-flex justify-content-center">
+                <div
+                class="card bg-dark text-white text-center carta carta-negra"
+                style="width: 127px; height: 186px; cursor: pointer"
+                >
+                <div class="card-inner">
+                    <div
+                    class="card-front d-flex justify-content-center align-items-center h-100"
+                    >
+                    <img
+                        src="svg/logo-cybercard-white.svg"
+                        alt="Card Image"
+                        class="img-fluid"
+                    />
+                    </div>
+                    <div
+                    class="card-back d-flex flex-column justify-content-center align-items-center h-100 p-2 text-white"
+                    style="font-size: 0.9rem"
+                    >
+                    <p class="mb-0 fw-bold text-warning text-center">
+                        🕶️ ¡Responde la siguiente pregunta hacker!<br />
+                        <span class="text-light">Si aciertas, ganas 1 ⭐</span>
+                    </p>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+
+
+         <div class="d-flex justify-content-center gap-3 mt-4" id="tablero-cartas-azul">
+            <!-- Contenedor de cartas azules -->
+            <div class="d-flex flex-wrap justify-content-center gap-3" id="memory-board-blue">
+                <!-- Las cartas se generarán dinámicamente aquí -->
+            </div>
+
+            <!-- Carta negra azul -->
+            <div id="cartaNegraAzulContainer" class="d-flex justify-content-center">
+                <div
+                class="card bg-dark text-white text-center carta carta-negra"
+                style="width: 127px; height: 186px; cursor: pointer"
+                >
+                <div class="card-inner">
+                    <div
+                    class="card-front d-flex justify-content-center align-items-center h-100"
+                    >
+                    <img
+                        src="svg/logo-cybercard-white.svg"
+                        alt="Card Image"
+                        class="img-fluid"
+                    />
+                    </div>
+                    <div
+                    class="card-back d-flex flex-column justify-content-center align-items-center h-100 p-2 text-white"
+                    style="font-size: 0.9rem"
+                    >
+                    <p class="mb-0 fw-bold text-info text-center">
+                        💻 El sistema se reinició<br />
+                        <span class="text-light">¡Ganaste una sorpresa!</span>
+                    </p>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    
+    <!-- Modales -->
+    <div id="modal-reglas"></div>
+    <div id="modal-modo-juego"></div>
+    <div id="modal-velocidad"></div>
+    <div id="modal-opciones"></div>
+    <div id="modal-salir"></div>
+    <div id="modal-preparate"></div>
+    <div id="modal-uso-inicial"></div>
+    <div id="modal-comodin"></div>
+
+    <!-- <div id="menu-navegacion"></div> -->
+
+    <!-- Menu del juego y panel de control -->
+    <div class="d-flex justify-content-between align-items-center p-3 shadow menu">
+      <!-- Botón Iniciar -->
+      <button
+        id="startButton"
+        class="d-flex align-items-center justify-content-center rounded-circle border border-5 border-light bg-danger shadow text-white text-uppercase fw-bold small"
+        style="width: 80px; height: 80px;"
+      >
+        Iniciar
+      </button>
+
+      <!-- Botones de menú -->
+      <div class="d-flex flex-grow-1 justify-content-center gap-4 flex-wrap">
+        <!-- Reglas -->
+        <button
+          class="d-flex flex-column align-items-center text-center menu-item bg-transparent border-0 text-light"
+          style="cursor: pointer"
+          data-modal="modalReglas"
+        >
+          <div
+            class="d-flex align-items-center justify-content-center rounded-3 bg-secondary shadow p-2 mb-1"
+            style="width: 45px; height: 45px"
+          >
+            <i class="bi bi-journal-text text-white fs-4"></i>
+          </div>
+          <span class="small fw-semibold text-uppercase">Reglas</span>
+        </button>
+
+        <!-- Modo de Juego -->
+        <button
+          class="d-flex flex-column align-items-center text-center menu-item bg-transparent border-0 text-light"
+          style="cursor: pointer"
+          data-modal="modalModoJuego"
+        >
+          <div
+            class="d-flex align-items-center justify-content-center rounded-3 bg-secondary shadow p-2 mb-1"
+            style="width: 45px; height: 45px"
+          >
+            <i class="bi bi-controller text-white fs-4"></i>
+          </div>
+          <span class="small fw-semibold text-uppercase">Modo de juego</span>
+        </button>
+
+        <!-- Velocidad -->
+        <button
+          class="d-flex flex-column align-items-center text-center menu-item bg-transparent border-0 text-light"
+          style="cursor: pointer"
+          data-modal="modalVelocidad"
+        >
+          <div
+            class="d-flex align-items-center justify-content-center rounded-3 bg-secondary shadow p-2 mb-1"
+            style="width: 45px; height: 45px"
+          >
+            <i class="bi bi-lightning-charge-fill text-white fs-4"></i>
+          </div>
+          <span class="small fw-semibold text-uppercase">Velocidad</span>
+        </button>
+
+        <!-- Opciones -->
+        <button
+          class="d-flex flex-column align-items-center text-center menu-item bg-transparent border-0 text-light"
+          style="cursor: pointer"
+          data-modal="modalOpciones"
+        >
+          <div
+            class="d-flex align-items-center justify-content-center rounded-3 bg-secondary shadow p-2 mb-1"
+            style="width: 45px; height: 45px"
+          >
+            <i class="bi bi-three-dots-vertical text-white fs-4"></i>
+          </div>
+          <span class="small fw-semibold text-uppercase">Opciones</span>
+        </button>
+      </div>
+
+      <!-- Selector de colores -->
+      <div
+        class="d-flex flex-column align-items-center justify-content-center"
+        style="width: 80px; height: 80px;"
+      >
+        <!-- Amarillo -->
+        <button
+          class="rounded bg-warning shadow mb-1 border-0 color-btn"
+          style="width: 24px; height: 24px; cursor: pointer"
+          data-color="yellow"
+        ></button>
+
+        <div class="d-flex justify-content-between w-100">
+          <!-- Verde -->
+          <button
+            class="rounded bg-success shadow border-0 color-btn"
+            style="width: 24px; height: 24px; cursor: pointer"
+            data-color="green"
+          ></button>
+
+          <!-- Comodín -->
+          <button
+            id="comodin-btn"
+            class="rounded bg-dark text-white border-0 d-flex justify-content-center align-items-center fw-bold"
+            style="width: 24px; height: 24px; cursor:pointer;"
+          >
+            ?
+          </button>
+
+          <!-- Rojo -->
+          <button
+            class="rounded bg-danger shadow border-0 color-btn"
+            style="width: 24px; height: 24px; cursor: pointer"
+            data-color="red"
+          ></button>
+        </div>
+
+        <!-- Azul -->
+        <button
+          class="rounded bg-primary shadow mt-1 border-0 color-btn"
+          style="width: 24px; height: 24px; cursor: pointer"
+          data-color="blue"
+        ></button>
+      </div>
+    </div>
+
+    
+    <audio id="background-music" src="./sounds/gaming.mp3" loop></audio>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/rating-component.js"></script>
+    <script src="./js/global.js"></script>
+    <script src="./js/start-game.js"></script>
+
+    <!-- Mazos de cartas -->
+    <script src="./js/blue-cards.js"></script>
+    <script src="./js/red-cards.js"></script>
+    <script src="./js/green-cards.js"></script>
+    <script src="./js/yellow-cards.js"></script>
+    <script src="./js/comodin.js"></script>
+
+    <script src="./js/memory.js"></script>
+    <!-- <script src="./js/modo-juego.js"></script>
+    <script src="./js/logica-juego.js"></script> -->
+    <script src="./js/sonido-carta.js"></script>
+    <script src="./js/menu-navegacion.js"></script>
+    <script src="./js/load-modals.js"></script>
+
+    <!-- Funciones que dependen de los anteriores -->
+    <script src="./js/rating.js"></script>
+
+  </body>
+</html>

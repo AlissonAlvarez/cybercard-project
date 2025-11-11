@@ -1,0 +1,493 @@
+:root {
+  --color-1: #515151;
+  --color-2: #1e201f;
+  --color-3: #143e54;
+  --color-4: #9a2b18;
+  --color-5: #0f6331;
+  --color-6: #e6a72f;
+}
+
+header {
+  position: fixed;
+  height: 60px;
+  width: 90%;
+  background-color: var(--color-2) !important;
+  top: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  justify-content: center;
+  border-radius: 8px;
+  z-index: 10;
+}
+
+
+/* <!-- =========================== Estilos vista index =============================== --> */
+
+.fondo {
+  width: 40% !important;
+  position: relative;
+}
+
+.cartas {
+  position: absolute;
+  top: 14%;
+  width: 100px;
+}
+
+.body {
+  height: auto;
+  background-color: var(--color-1);
+}
+
+.cyber-title {
+  font-size: 4rem;
+  font-weight: 900;
+  letter-spacing: 0.5rem;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.cyber-title .white {
+  color: #fff;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8), 0 0 20px rgba(255, 255, 255, 0.3);
+}
+.cyber-title .dark {
+  color: #2a2a2a;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5),
+    -1px -1px 2px rgba(255, 255, 255, 0.1);
+}
+
+
+.menu {
+  position: fixed;
+  width: 90%;
+  background-color: var(--color-2) !important;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  justify-content: center;
+  border-radius: 20px;
+  z-index: 9999;
+}
+
+.menu-btns button {
+  min-width: 120px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.menu-btns button:hover {
+  transform: translateY(-1px);
+}
+
+.menu-btns a {
+    min-width: 120px;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: transform 0.1s;
+}
+
+.menu-btns a:hover {
+    transform: translateY(-3px) !important;
+}
+
+
+.cyber-title {
+    font-size: 80px;
+    font-weight: 900;
+    letter-spacing: 0.5rem;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+}
+
+.cyber-title .white { color: #fff; text-shadow: 3px 3px 6px rgba(0,0,0,0.8), 0 0 20px rgba(255,255,255,0.3); }
+.cyber-title .dark { color: #2a2a2a; text-shadow: 2px 2px 4px rgba(0,0,0,0.5), -1px -1px 2px rgba(255,255,255,0.1); }
+
+.fondo {
+    max-width: 400px;
+    border-radius: 12px;
+    z-index: 10;
+    position: relative;
+    top: 80px;
+}
+
+.cartas {
+    width: 100px;
+    height: 120px;
+    border-radius: 8px;
+    position: absolute;
+    z-index: 5;
+}
+
+.flotante.roja {
+    top: 20px;
+    left: 45%;
+    animation: flotarRoja 2s ease-in-out infinite alternate;
+}
+
+.flotante.azul {
+    width: 120px;
+    top: 24px;
+    right: 44%;
+    animation: flotarAzul 3s ease-in-out infinite alternate;
+}
+
+@keyframes flotarRoja {
+    0% { transform: translateY(0) rotate(-5deg); }
+    50% { transform: translateY(-20px) rotate(5deg); }
+    100% { transform: translateY(0) rotate(-5deg); }
+}
+
+@keyframes flotarAzul {
+    0% { transform: translateY(0) rotate(5deg); }
+    50% { transform: translateY(-25px) rotate(-5deg); }
+    100% { transform: translateY(0) rotate(5deg); }
+}
+
+/* <!-- =========================== Estilos vista loader =============================== --> */
+
+.logo-loader {
+      width: 150px;
+      margin-bottom: 20px;
+    }
+
+    .loading-text {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .progress {
+      width: 250px;
+      height: 20px;
+      margin: 0 auto 15px;
+    }
+
+    .dot {
+      font-size: 1.5rem;
+      color: #d9a441;
+      font-weight: 700;
+      animation: blink 1.4s infinite;
+      margin: 0 2px;
+    }
+    .dot:nth-child(2) { animation-delay: 0.2s; }
+    .dot:nth-child(3) { animation-delay: 0.4s; }
+
+    @keyframes blink {
+      0%,20%,100%{opacity:0;}
+      50%{opacity:1;}
+    }
+
+/* <!-- =========================== Estilos vista inicio =============================== --> */
+
+.contenedor-cartas {
+  height: auto;
+  padding-top: 60px !important;
+  padding-bottom: 140px !important;
+  background-color: #424242;
+}
+
+.carta-roja {
+  background-color: var(--color-4) !important;
+}
+
+.carta-roja .card-inner {
+  outline: 2px solid #e6a284;
+  outline-offset: -6px;
+  border-radius: 0.5rem;
+}
+
+.carta-azul {
+  background-color: var(--color-3) !important;
+  border-radius: 8px !important;
+}
+
+.carta-azul .card-inner {
+  outline: 2px solid #397ca1;
+  outline-offset: -6px;
+  border-radius: 8px;
+}
+
+.carta-verde {
+  background-color: var(--color-5) !important;
+}
+
+.carta-verde .card-inner {
+  outline: 2px solid #bacca2;
+  outline-offset: -6px;
+  border-radius: 0.5rem;
+}
+
+.carta-amarilla {
+  background-color: var(--color-6) !important;
+}
+
+.carta-amarilla .card-inner {
+  outline: 2px solid #f8c65d;
+  outline-offset: -6px;
+  border-radius: 0.5rem;
+}
+
+.carta-negra {
+  background-color: var(--color-2) !important;
+}
+
+.carta-negra .card-inner {
+  outline: 0.5px solid #3d3d3d;
+  outline-offset: -6px;
+  border-radius: 0.5rem;
+}
+
+.tooltip-global {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.85);
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 9999;
+}
+
+.carta {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+.carta {
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.carta:hover {
+  transform: translateY(-10px) scale(1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+  z-index: 5;
+}
+
+.carta::after {
+  content: "Voltear carta";
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background: linear-gradient(135deg, #292929, #444);
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  opacity: 0;
+  pointer-events: none;
+  white-space: nowrap;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  z-index: 8;
+}
+
+.carta::before {
+  content: "";
+  position: absolute;
+  bottom: 46%;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  width: 10px;
+  height: 10px;
+  background: linear-gradient(135deg, #292929, #444);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.carta:hover::after,
+.carta:hover::before {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Contenedor interno para el giro */
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s cubic-bezier(0.4, 0.2, 0.2, 1);
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+/* Giro */
+.card-inner.is-flipped {
+  transform: rotateY(180deg);
+}
+
+/* Caras de la carta */
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 8px;
+}
+
+/* Cara posterior */
+.card-back {
+  transform: rotateY(180deg);
+}
+
+/* Cartas emparejadas */
+.matched {
+  opacity: 0.3;
+  pointer-events: none;
+  transition: opacity 0.5s;
+}
+
+/* Ajuste visual general */
+.card.carta {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 0;
+}
+
+.card.carta:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+
+/* --- ANIMACIONES DE MEZCLA DE CARTAS --- */
+.animar-barajar-salida {
+  transform: translateY(-20px) rotateZ(10deg) scale(1.05);
+  opacity: 0;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  z-index: 100;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+  z-index: 0;
+}
+
+.animar-barajar-entrada {
+  opacity: 0;
+  transform: scale(0.8) rotateZ(-5deg);
+  animation: entradaBaraja 0.6s forwards cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+
+@keyframes entradaBaraja {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) rotateZ(-8deg) scale(0.8);
+  }
+  50% {
+    opacity: 0.6;
+    transform: translateY(-10px) rotateZ(5deg) scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotateZ(0deg) scale(1);
+  }
+}
+
+#startButton {
+  width: 80px;
+  height: 80px;
+  cursor: pointer;
+  background-color: var(--color-4) !important;
+  transition: all 0.1s ease-in-out;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.3); /* sombra normal */
+}
+
+#startButton.pressed {
+  transform: translateY(4px);
+  box-shadow: inset 0 3px 5px rgba(0,0,0,0.4);
+  background-color: #641a1a !important;
+}
+
+#memory-board-blue {
+  gap: 8px;
+}
+
+.card-container {
+  flex: 0 0 auto;
+}
+
+@media (max-width: 767px) {
+  .card {
+    width: 90px !important;
+    height: 140px !important;
+  }
+
+  .card img {
+    width: 30px !important;
+  }
+
+  .card-back {
+    font-size: 0.75rem;
+  }
+}
+
+/* Tamaño de botones en mobile y tablet */
+@media (max-width: 991.98px) { /* tablets y menos */
+  .menu > button#startButton {
+    width: 60px !important;
+    height: 60px !important;
+    font-size: 0.8rem !important;
+  }
+
+  .menu .menu-item > div {
+    width: 35px !important;
+    height: 35px !important;
+  }
+
+  .menu .menu-item span {
+    font-size: 0.7rem !important;
+  }
+
+  .menu .color-btn, #comodin-btn {
+    width: 20px !important;
+    height: 20px !important;
+  }
+}
+
+/* Tamaño de botones en mobile pequeño */
+@media (max-width: 575.98px) {
+  .menu > button#startButton {
+    width: 50px !important;
+    height: 50px !important;
+    font-size: 0.7rem !important;
+  }
+
+  .menu .menu-item > div {
+    width: 30px !important;
+    height: 30px !important;
+  }
+
+  .menu .menu-item span {
+    font-size: 0.6rem !important;
+  }
+
+  .menu .color-btn, #comodin-btn {
+    width: 18px !important;
+    height: 18px !important;
+  }
+}
+
+.card .card-back {
+  font-size: 0.85rem; 
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+@media (max-width: 991.98px) {
+  .card .card-back {
+    font-size: 8px !important;
+    padding: 0.4rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .card .card-back {
+    font-size: 8px !important;
+    padding: 0.3rem;
+  }
+}
